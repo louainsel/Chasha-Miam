@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#e8c5c4" />
+  <title>Chasha'Miam — Salon de thé</title>
+  <meta name="description" content="Maquette du site du Chasha'Miam — salon de thé RP." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#accueil" aria-label="Retour à l'accueil">
+      <img src="assets/logo.png" alt="Chasha'Miam" />
+    </a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a>
+      <a href="#carte">La Carte</a>
+	  <a href="#horaires">Horaires</a>
+      <a class="sound-link" href="https://w2g.tv/room/?room_id=ssavnzh6wmr48dmg9l" target="_blank" rel="noopener">♪ Ambiance</a>
+      <button class="link-button" data-open-modal="credits">HRP & Crédits</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-copy">
+        <p class="eyebrow">Salon de thé</p>
+        <img class="hero-logo" src="assets/logo.png" alt="Logo Chasha'Miam" />
+        <h1>Un petit coin de douceur au cœur de Lavendière.</h1>
+        <p class="lead">Le Chasha’Miam est un petit salon de thé qui vous accueillera avec calme, sérénité et candeur. Tenu par Iadreï Minousch et son compagnon, Shasharine Dodorine, l’établissement est une porte ouverte dans la candeur et la tendresse que le duo a à offrir.</p>
+
+        <div class="address-line">
+          <span class="address-mark" aria-hidden="true">✦</span>
+          <p><strong>Ragnarok — Lavendière</strong><br><span>27e secteur, parcelle 22</span></p>
+        </div>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#carte">Découvrir la carte</a>
+          <a class="button secondary" href="https://w2g.tv/room/?room_id=ssavnzh6wmr48dmg9l" target="_blank" rel="noopener">♪ Écouter l'ambiance</a>
+        </div>
+      </div>
+
+      <div class="hero-art-wrap">
+        <span class="art-backdrop" aria-hidden="true"></span>
+        <img class="hero-art" src="assets/hero-iadrei-shasharine.png" alt="Illustration d'Iadreï et Shasharine" />
+      </div>
+    </section>
+
+    <div class="section-transition" aria-hidden="true">
+      <span></span><i>♥</i><span></span>
+    </div>
+
+    <section class="menu-section" id="carte">
+      <div class="menu-intro">
+        <div class="section-heading">
+          <p class="eyebrow">La Carte</p>
+          <h2>Vous désirez commander ?</h2>
+          <p>Une petite soif, un creux ou une envie de gourmandise ? Il y a sûrement de quoi vous faire plaisir. Prenez votre temps et laissez-vous tenter.</p>
+        </div>
+        <img class="menu-mascots" src="assets/cookie-appelpie-carte.png" alt="Cookie et Appelpie avec un petit gâteau" />
+      </div>
+
+      <div class="menu-tabs" role="tablist" aria-label="Catégories de la carte">
+        <button class="menu-tab active" data-category="chaud">
+  <img class="menu-cat" src="" alt="" aria-hidden="true">
+  <span>Boissons chaudes</span>
+</button>
+
+<button class="menu-tab" data-category="froid">
+  <img class="menu-cat" src="" alt="" aria-hidden="true">
+  <span>Boissons froides</span>
+</button>
+
+<button class="menu-tab" data-category="gourmandises">
+  <img class="menu-cat" src="" alt="" aria-hidden="true">
+  <span>Gourmandises</span>
+</button>
+
+<button class="menu-tab" data-category="sale">
+  <img class="menu-cat" src="" alt="" aria-hidden="true">
+  <span>Salé</span>
+</button>
+      </div>
+
+      <div class="subtabs" id="gourmand-subtabs" hidden>
+        <button class="subtab active" data-subcategory="patisseries">Pâtisseries</button>
+        <button class="subtab" data-subcategory="crepes-gaufres">Crêpes & gaufres</button>
+        <button class="subtab" data-subcategory="glaces">Glaces</button>
+        <button class="subtab" data-subcategory="gateaux-voyage">Gâteaux de voyage</button>
+      </div>
+
+      <div id="menu-content" class="menu-content" aria-live="polite"></div>
+    </section>
+
+<div class="section-transition" aria-hidden="true">
+      <span></span><i>♥</i><span></span>
+    </div>
+
+    <section class="closing-strip" id="horaires">
+  <img src="assets/duo-dodo.png" alt="Cookie et Appelpie endormis dans un panier" />
+  <div>
+    <p class="eyebrow">Horaires</p>
+    <h2>Une petite faim ? Passez nous voir.</h2>
+
+    <p>
+      Le Chasha’Miam vous accueille tous les jours, à l’exception du premier
+      jour de la semaine, de <strong>11 h à 19 h</strong>.
+    </p>
+
+    <p>
+      <strong>Sharlène et Jajariku</strong> sont là pour vous accueillir,
+      prendre vos commandes et veiller à ce que vous ne manquiez de rien.
+      Quant aux gérants, vous pourrez les croiser au gré de leurs passages
+      au salon.
+    </p>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Chasha'Miam — site RP FFXIV</p>
+    <button class="link-button" data-open-modal="credits">HRP & crédits</button>
+  </footer>
+
+  <dialog class="credits-modal" id="credits-modal">
+    <button class="modal-close" aria-label="Fermer" data-close-modal>×</button>
+    <p class="eyebrow">Hors jeu</p>
+    <h2>HRP & Crédits</h2>
+    <div class="credits-placeholder">
+  <strong>Mods & apparence en jeu</strong>
+
+  <p>
+    L’utilisation de mods graphiques, de Snowcloak ou de Lightless relève
+    entièrement des préférences de chacun. Aucun de ces outils n’est nécessaire
+    pour profiter du Chasha’Miam ou y participer.
+  </p>
+
+  <p>
+    Nous respectons tout autant les joueurs utilisant une apparence modifiée
+    que ceux préférant jouer en <strong>vanilla</strong>. En somme : chacun est libre de profiter du lieu avec les outils, les réglages
+    et l’apparence qui lui conviennent ♥
+  </p>
+
+</div>
+    <div class="credits-placeholder credits-list">
+  <strong class="credits-title">Les Crédits</strong>
+
+  <p>
+    <span class="credit-label">Site & textes</span>
+    <span class="credit-separator">—</span>
+    Lou Ainsel [Shasharine Dodorine]
+  </p>
+
+  <p>
+    <span class="credit-label">Illustrations du logo & des mini-tasses</span>
+    <span class="credit-separator">—</span>
+    <a href="https://jynette.carrd.co/" target="_blank" rel="noopener noreferrer">Jynette</a>
+  </p>
+
+  <p>
+    <span class="credit-label">Illustration de l'accueil</span>
+    <span class="credit-separator">—</span>
+    <a href="https://linktr.ee/getakupepi" target="_blank" rel="noopener noreferrer">GetakuPepi</a>
+  </p>
+
+  <p>
+    <span class="credit-label">Illustrations d'Appelpie & Cookie</span>
+    <span class="credit-separator">—</span>
+    <a href="https://vgen.co/Strider1112" target="_blank" rel="noopener noreferrer">Strider</a>
+  </p>
+
+  <p>
+    <span class="credit-label">Illustrations des plats</span>
+    <span class="credit-separator">—</span>
+    Images génératives temporaires, progressivement remplacées par des illustrations réalisées par des artistes.
+  </p>
+
+  <p>
+    <span class="credit-label">Univers</span>
+    <span class="credit-separator">—</span>
+    FINAL FANTASY XIV © SQUARE ENIX
+  </p>
+</div>
+  </dialog>
+
+
+  
+  <button
+  id="back-to-top"
+  class="back-to-top"
+  type="button"
+  aria-label="Retour en haut de la page"
+  title="Retour en haut"
+>
+  <img id="random-cat" src="" alt="" aria-hidden="true">
+</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
