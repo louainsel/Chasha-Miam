@@ -605,3 +605,144 @@ h2 { font-size: clamp(1.85rem, 3vw, 2.8rem); }
   color: var(--coral);
   border-bottom-color: var(--coral);
 }
+
+/* =========================================================
+   FICHES — THÉS & INFUSIONS
+   ========================================================= */
+
+.drink-info-link {
+  appearance: none;
+  border: 0;
+  border-bottom: 1px dotted rgba(185,63,87,.42);
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-style: inherit;
+  cursor: pointer;
+  transition: color .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.drink-info-link:hover {
+  color: var(--berry);
+  border-bottom-color: var(--berry);
+  background: rgba(246,207,210,.26);
+}
+
+.drink-info-link:focus-visible {
+  outline: 2px solid var(--berry);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.drink-modal {
+  width: min(680px, calc(100vw - 2rem));
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+  border: 1px solid rgba(185,63,87,.24);
+  border-radius: 6px;
+  padding: 2rem;
+  color: var(--ink);
+  background: var(--cream);
+  box-shadow: 0 28px 90px rgba(49,29,34,.28);
+}
+
+.drink-modal::backdrop {
+  background: rgba(48,31,36,.45);
+  backdrop-filter: blur(5px);
+}
+
+.drink-modal h2 {
+  margin-bottom: 1rem;
+}
+
+.drink-modal-ingredients {
+  margin: 0;
+  padding: 1rem 1.15rem;
+  border-left: 4px solid var(--sage);
+  background: rgba(246,207,210,.42);
+  color: var(--ink);
+  font-style: italic;
+}
+
+.drink-modal-description {
+  margin-top: 1.2rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* =========================================================
+   FICHE — PLATEAU THAVNAIROIS
+   ========================================================= */
+
+.menu-item-info-link {
+  appearance: none;
+  border: 0;
+  border-bottom: 1px dotted rgba(185,63,87,.42);
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  transition: color .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.menu-item-info-link:hover {
+  color: var(--coral);
+  border-bottom-color: var(--berry);
+  background: rgba(246,207,210,.26);
+}
+
+.menu-item-info-link:focus-visible {
+  outline: 2px solid var(--berry);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.menu-item-modal-description {
+  color: var(--ink);
+}
+
+.plateau-modal-list p {
+  margin: 0;
+  padding: .8rem 0;
+  border-bottom: 1px dotted rgba(80,57,65,.22);
+  line-height: 1.55;
+}
+
+.plateau-modal-list p:first-child {
+  padding-top: 0;
+}
+
+.plateau-modal-list strong {
+  color: var(--berry-dark);
+}
+
+.plateau-modal-list em {
+  color: var(--muted);
+}
+
+.plateau-modal-sauces {
+  margin-top: 1.35rem;
+  padding: 1rem 1.15rem;
+  border-left: 4px solid var(--sage);
+  background: rgba(246,207,210,.42);
+}
+
+.plateau-modal-sauces > strong {
+  display: block;
+  margin-bottom: .55rem;
+  color: var(--berry-dark);
+}
+
+.plateau-modal-sauces p {
+  margin: .28rem 0;
+  color: var(--ink);
+}
+
+.plateau-modal-sauces p::before {
+  content: "▬";
+  margin-right: .55rem;
+  color: var(--turquoise);
+}

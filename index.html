@@ -5,7 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#e8c5c4" />
   <title>Chasha'Miam — Salon de thé</title>
-  <meta name="description" content="Maquette du site du Chasha'Miam — salon de thé RP." />
+  <meta name="description" content="Établissement de JDR sur Ragnarok, Lavendière 27-22. Le Chasha'Miam vous accueille pour un instant de dégustation et de repos hors du temps." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Chasha'Miam" />
+  <meta property="og:title" content="Chasha'Miam — Salon de thé" />
+  <meta property="og:description" content="Établissement de JDR sur Ragnarok, Lavendière 27-22. Le Chasha'Miam vous accueille pour un instant de dégustation et de repos hors du temps." />
+  <meta property="og:url" content="https://louainsel.github.io/Chasha-Miam/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chasha'Miam — Salon de thé" />
+  <meta name="twitter:description" content="Établissement de JDR sur Ragnarok, Lavendière 27-22. Le Chasha'Miam vous accueille pour un instant de dégustation et de repos hors du temps." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
@@ -190,6 +200,15 @@
 
 
   
+
+  <dialog class="drink-modal" id="drink-modal">
+    <button class="modal-close" aria-label="Fermer" data-close-drink-modal>×</button>
+    <p class="eyebrow">À découvrir</p>
+    <h2 id="drink-modal-title"></h2>
+    <p class="drink-modal-ingredients" id="drink-modal-ingredients"></p>
+    <div class="drink-modal-description" id="drink-modal-description"></div>
+  </dialog>
+
   <button
   id="back-to-top"
   class="back-to-top"

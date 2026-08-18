@@ -179,11 +179,77 @@ const MENU = {
         desc: "Un assortiment généreux de spécialités thavnaïroises à partager — ou pas. Dodo tandoori hariyali en brochettes, morue amritsari, naan nature, au persil ou au fromage, bouchées végétariennes, jalapeños fourrés et biryani revisité.",
         details: "Servi avec trois sauces maison.",
         image: "assets/Plateau.png",
-        badge: "À partager"
+        badge: "À partager",
+        infoKey: "Plateau Thavnairois"
       }
     ]
   }
 };
+
+const DRINK_DESCRIPTIONS = {
+  "Masala Chai Traditionnel": {
+    ingredients: "Thé noir de Radz-at-Han, lait de hainag et épices (graines de cardamome, gingembre, cannelle, girofle et poivre).",
+    description: "Thé emblématique de la région de Thavnair, il s'agit d'un thé fortement infusé que la douceur du lait viendra adoucir. Il est possible de demander une version sans lait ; dans ce cas, le thé sera infusé comme un thé noir simple et non à la thavnairoise."
+  },
+  "Genmaicha": {
+    ingredients: "Thé vert de Kugane, assorti de riz grillé.",
+    description: "Il s'agit d'un classique des campagnes hingashiennes. Son goût riche en céréales et sa légèreté désaltérante le rendent idéal pour accompagner une petite douceur."
+  },
+  "Lao Shu Bai Cha": {
+    ingredients: "Thé blanc de Doma, écorce de mandarine et de kaki, gingembre, cannelle.",
+    description: "Lorsque vient l'automne à Doma, les kakis et les mandarines arrivent sur toutes les tables pour animer des instants chaleureux et conviviaux. Ce thé allie ces saveurs typiques et traditionnelles avec la noblesse du thé blanc de la région."
+  },
+  "Esprit de la Sylphe": {
+    ingredients: "Tisane de frêne, eucalyptus, tilleul et bleuet, tous en provenance de Sombrelinceul.",
+    description: "Ce mélange d'une douce teinte bleutée respire l'air frais de la Sylphe si précieuse aux habitants de Gridania. Relativement corsée, elle a pour vertu de faciliter le dégagement des voies respiratoires, idéale pour prévenir ou atténuer le rhume dû au froid local."
+  },
+  "Cocktail du Verger": {
+    ingredients: "Infusion de pomme aigre-douce, carottes, betterave, raisins secs, rolanbaie et fleurs de tournesol, tous en provenance de la Noscea.",
+    description: "Cette infusion de fruits cultivés dans les vergers d'Estival saura vous ravir avec sa robe d'un rose étincelant et son goût naturellement sucré. Une véritable eau de fruits qui saura ravir petits et grands."
+  },
+  "L'Incandescent": {
+    ingredients: "Rooibos, amandes, pistaches, écorces d'orange, coriandre et mélange 4 épices (poivre, muscade, girofle, cannelle).",
+    description: "Ce rooibos à la couleur d'un doré intense ne sera pas sans rappeler le célèbre Mur Incandescent des régions du Thanalan. Naturellement sucré, son parfum ne sera pas sans rappeler le pain d'épices."
+  }
+};
+
+const MENU_ITEM_DESCRIPTIONS = {
+  "Plateau Thavnairois": {
+    eyebrow: "À partager",
+    html: `
+      <div class="plateau-modal-list">
+        <p><strong>Dodo tandoori hariyali</strong><br><em>Dodo tandoori à la menthe et à la coriandre en brochette</em></p>
+        <p><strong>Morue amritsari</strong><br><em>Morue fris avec cardamone et farine de pois chiche</em></p>
+        <p><strong>Naan</strong><br><em>Nature, au persil ou au fromage</em></p>
+        <p><strong>Bouchées végétariennes</strong><br><em>Petit muffin aux épinards, fleur de courgette, paneer (fromage frais) et curry</em></p>
+        <p><strong>Jalapeños fourrés</strong><br><em>Jalapeños grillés puis marinés fourré à une crème pimentée et agrémentée de cacahuètes grillées et de pois chiches</em></p>
+        <p><strong>Biryani revisité</strong><br><em>Gâteaux de riz complet soufflé à la cannelle, carottes, oignons, amandes, raisin sec et cumin</em></p>
+      </div>
+      <div class="plateau-modal-sauces">
+        <strong>Sauces pour accompagner</strong>
+        <p>Curry au beurre de cacahuète</p>
+        <p>Crème au citron, coriandre et menthe</p>
+        <p>Piment, ail, persil, coriandre, citron, soja</p>
+      </div>
+    `
+  }
+};
+
+const DRINK_LABELS = {
+  "Chaï de Thavnair": "Masala Chai Traditionnel",
+  "Genmaicha d’Hingashi": "Genmaicha",
+  "Lao Shu Bai Cha aux kakis de Doma": "Lao Shu Bai Cha",
+  "L'Esprit de la Sylphe": "Esprit de la Sylphe",
+  "Le Cocktail du Verger": "Cocktail du Verger",
+  "L'Incandescent": "L'Incandescent"
+};
+
+function makeDetailsInteractive(details = "") {
+  return Object.entries(DRINK_LABELS).reduce((html, [label, drinkName]) => {
+    const button = `<button type="button" class="drink-info-link" data-drink="${drinkName}">${label}</button>`;
+    return html.split(label).join(button);
+  }, details);
+}
 
 const menuContent = document.querySelector('#menu-content');
 const categoryTabs = [...document.querySelectorAll('.menu-tab')];
@@ -199,9 +265,9 @@ function cardTemplate(item) {
   return `
     <article class="${classes.join(' ')}">
       <div>
-        <h3>${item.name}</h3>
+        <h3>${item.infoKey ? `<button type="button" class="menu-item-info-link" data-info="${item.infoKey}">${item.name}</button>` : item.name}</h3>
         <p>${item.desc}</p>
-        ${item.details ? `<p class="details">${item.details}</p>` : ''}
+        ${item.details ? `<p class="details">${makeDetailsInteractive(item.details)}</p>` : ''}
         ${item.badge ? `<div class="meta"><span class="badge ${item.badge === 'Signature' ? 'signature' : ''}">${item.badge}</span></div>` : ''}
       </div>
       ${item.image ? `<img src="${item.image}" alt="Illustration — ${item.name}" />` : ''}
@@ -245,6 +311,52 @@ subTabs.forEach(button => {
     subTabs.forEach(b => b.classList.toggle('active', b === button));
     renderMenu();
   });
+});
+
+const drinkModal = document.querySelector('#drink-modal');
+const drinkModalTitle = document.querySelector('#drink-modal-title');
+const drinkModalIngredients = document.querySelector('#drink-modal-ingredients');
+const drinkModalDescription = document.querySelector('#drink-modal-description');
+
+menuContent.addEventListener('click', event => {
+  const drinkTrigger = event.target.closest('.drink-info-link');
+  if (drinkTrigger) {
+    const drink = DRINK_DESCRIPTIONS[drinkTrigger.dataset.drink];
+    if (!drink) return;
+
+    drinkModal.querySelector('.eyebrow').textContent = 'À découvrir';
+    drinkModalTitle.textContent = drinkTrigger.dataset.drink;
+    drinkModalIngredients.hidden = false;
+    drinkModalIngredients.textContent = drink.ingredients;
+    drinkModalDescription.classList.remove('menu-item-modal-description');
+    drinkModalDescription.textContent = drink.description;
+    drinkModal.showModal();
+    return;
+  }
+
+  const itemTrigger = event.target.closest('.menu-item-info-link');
+  if (!itemTrigger) return;
+
+  const item = MENU_ITEM_DESCRIPTIONS[itemTrigger.dataset.info];
+  if (!item) return;
+
+  drinkModal.querySelector('.eyebrow').textContent = item.eyebrow || 'À découvrir';
+  drinkModalTitle.textContent = itemTrigger.dataset.info;
+  drinkModalIngredients.hidden = true;
+  drinkModalDescription.classList.add('menu-item-modal-description');
+  drinkModalDescription.innerHTML = item.html;
+  drinkModal.showModal();
+});
+
+document.querySelector('[data-close-drink-modal]').addEventListener('click', () => drinkModal.close());
+drinkModal.addEventListener('click', event => {
+  const rect = drinkModal.getBoundingClientRect();
+  const inside =
+    event.clientX >= rect.left &&
+    event.clientX <= rect.right &&
+    event.clientY >= rect.top &&
+    event.clientY <= rect.bottom;
+  if (!inside) drinkModal.close();
 });
 
 const modal = document.querySelector('#credits-modal');
