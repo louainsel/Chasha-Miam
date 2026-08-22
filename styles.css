@@ -746,3 +746,353 @@ h2 { font-size: clamp(1.85rem, 3vw, 2.8rem); }
   margin-right: .55rem;
   color: var(--turquoise);
 }
+
+/* =========================================================
+   RESPONSIVE — AJUSTEMENTS TABLETTE & MOBILE
+   Ces règles sont volontairement placées en fin de fichier
+   afin de préserver le rendu desktop existant.
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .site-header {
+    gap: 1rem;
+    padding-inline: 1rem;
+  }
+
+  .main-nav {
+    min-width: 0;
+  }
+
+  .hero {
+    width: 100%;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+  }
+
+  .hero-copy {
+    width: min(100%, 760px);
+    justify-self: center;
+  }
+
+  .hero-art-wrap {
+    width: 100%;
+  }
+
+  .menu-section {
+    margin-inline: 1rem;
+  }
+
+  .menu-tabs,
+  .subtabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .closing-strip {
+    width: auto;
+  }
+
+  .credits-modal {
+    width: min(800px, calc(100vw - 2rem));
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 700px) {
+  html {
+    scroll-padding-top: 64px;
+  }
+
+  .site-header {
+    overflow: hidden;
+  }
+
+  .main-nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: .3rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .main-nav a,
+  .main-nav .link-button {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: .55rem .45rem;
+  }
+
+  .hero {
+    padding-inline: 1rem;
+  }
+
+  .hero-copy {
+    border-left-width: 4px;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    padding-inline: .75rem;
+  }
+
+  .menu-section {
+    margin-inline: .75rem;
+  }
+
+  .menu-tab {
+    min-width: 0;
+    padding-left: 56px;
+  }
+
+  .menu-cat {
+    width: 58px;
+    height: 64px;
+    left: 2px;
+  }
+
+  .category-heading {
+    padding-left: 1rem;
+  }
+
+  .menu-card,
+  .menu-card.with-image {
+    min-width: 0;
+  }
+
+  .menu-card h3,
+  .menu-card p,
+  .menu-card .details {
+    overflow-wrap: anywhere;
+  }
+
+  .closing-strip {
+    margin-inline: .75rem;
+  }
+
+  .credits-modal,
+  .drink-modal {
+    width: calc(100vw - 1.25rem);
+    max-height: calc(100dvh - 1.25rem);
+    padding: 1.5rem 1.15rem 1.25rem;
+  }
+
+  .credits-placeholder,
+  .credits-list,
+  .drink-modal-ingredients,
+  .plateau-modal-sauces {
+    padding-inline: .85rem;
+  }
+
+  .modal-close {
+    top: .35rem;
+    right: .55rem;
+    z-index: 2;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    padding-inline: .55rem;
+  }
+
+  .main-nav {
+    font-size: .72rem;
+  }
+
+  .hero {
+    padding: 1.25rem .75rem 2.5rem;
+    gap: 1.25rem;
+  }
+
+  .hero-art-wrap {
+    padding: .8rem 0 1rem;
+  }
+
+  .hero-art {
+    width: min(94%, 400px);
+  }
+
+  .art-backdrop {
+    width: 72%;
+    height: 72%;
+  }
+
+  .hero-copy {
+    padding: 1.25rem 1rem 1.35rem;
+  }
+
+  h1 {
+    font-size: clamp(1.65rem, 8vw, 2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 8vw, 2rem);
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .address-line {
+    align-items: flex-start;
+    margin-block: 1.3rem;
+  }
+
+  .hero-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .section-transition {
+    width: calc(100% - 2rem);
+    margin-bottom: 1.25rem;
+  }
+
+  .menu-section {
+    margin: 1.25rem .55rem 4rem;
+    padding: 1.7rem .8rem 2rem;
+  }
+
+  .menu-intro {
+    gap: .35rem;
+  }
+
+  .menu-mascots {
+    width: min(270px, 86%);
+  }
+
+  /* Deux colonnes restent plus compactes et confortables sur téléphone. */
+  .menu-tabs,
+  .subtabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .45rem;
+  }
+
+  .menu-tab {
+    min-height: 58px;
+    padding: .65rem .45rem .65rem 45px;
+    font-size: .76rem;
+    line-height: 1.15;
+  }
+
+  .menu-cat {
+    width: 47px;
+    height: 53px;
+    left: 0;
+    bottom: 0;
+  }
+
+  .subtab {
+    min-height: 48px;
+    padding: .55rem .45rem;
+    font-size: .74rem;
+    line-height: 1.2;
+  }
+
+  .menu-content {
+    margin-top: 1.45rem;
+  }
+
+  .category-heading {
+    padding: .9rem 0 .95rem .9rem;
+  }
+
+  .category-heading::before {
+    width: 4px;
+  }
+
+  .menu-grid {
+    margin-top: 1.2rem;
+  }
+
+  .menu-card {
+    padding-block: .95rem 1rem;
+  }
+
+  .menu-card.with-image {
+    gap: .55rem;
+  }
+
+  .menu-card.with-image img {
+    width: min(210px, 70vw);
+    height: min(190px, 55vw);
+    margin-top: .35rem;
+  }
+
+  .closing-strip {
+    margin: 0 .55rem 3.5rem;
+    padding: 1.25rem .95rem 1.4rem;
+    gap: .8rem;
+  }
+
+  .closing-strip img {
+    width: min(300px, 88%);
+    max-height: 230px;
+  }
+
+  .site-footer {
+    padding-inline: .85rem;
+  }
+
+  .credits-modal,
+  .drink-modal {
+    width: calc(100vw - .75rem);
+    max-height: calc(100dvh - .75rem);
+    padding: 1.35rem .9rem 1rem;
+  }
+
+  .credits-modal h2,
+  .drink-modal h2 {
+    padding-right: 1.6rem;
+  }
+
+  .credits-placeholder,
+  .credits-list {
+    margin-top: 1rem;
+  }
+
+  .credit-separator {
+    margin-inline: .1rem;
+  }
+
+  .back-to-top {
+    width: 58px;
+    height: 58px;
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .back-to-top.is-visible {
+    transform: translateY(0) scale(1.08);
+  }
+}
+
+@media (max-width: 360px) {
+  .main-nav {
+    font-size: .68rem;
+  }
+
+  .menu-tabs,
+  .subtabs {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-tab {
+    min-height: 52px;
+    padding-left: 58px;
+  }
+
+  .menu-cat {
+    width: 54px;
+    height: 58px;
+  }
+}
